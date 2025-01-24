@@ -1,0 +1,70 @@
+/* Sfondo generale */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    transition: background 1s;
+}
+
+/* Sfondo Soleggiato */
+body.sunny {
+    background: radial-gradient(circle, #ffe57f, #ffa000);
+}
+
+/* Sfondo Pioggia */
+body.rainy {
+    background: linear-gradient(to bottom, #4e4e50, #232526);
+}
+
+/* Sfondo Nuvoloso */
+body.cloudy {
+    background: linear-gradient(to bottom, #d7d2cc, #304352);
+}
+
+/* Contenitore */
+.container {
+    z-index: 10;
+    text-align: center;
+    color: #fff;
+}
+
+/* Animazione Gocce Pioggia */
+.rain-drop {
+    position: absolute;
+    width: 2px;
+    height: 10px;
+    background: #66a6ff;
+    animation: rainAnimation 1s infinite linear;
+    opacity: 0.6;
+}
+
+@keyframes rainAnimation {
+    0% {
+        transform: translateY(-100vh);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(100vh);
+        opacity: 1;
+    }
+}
+
+/* Animazione Nuvole */
+.cloud {
+    position: absolute;
+    width: 150px;
+    height: 80px;
+    background: #ffffff;
+    border-radius: 50%;
+    box-shadow: -30px 30px 0 -15px #ffffff, 30px 30px 0 -15px #ffffff;
+    animation: cloudMove 15s linear infinite;
+}
+
+@keyframes cloudMove {
+    from {
+        transform: translateX(-150%);
+    }
+    to {
+        transform: translateX(150%);
+    }
+}
